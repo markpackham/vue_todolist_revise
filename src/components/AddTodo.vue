@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import uuid from "uuid";
+// import uuid from "uuid";
 export default {
   name: "AddTodo",
   data() {
@@ -26,13 +26,14 @@ export default {
       e.preventDefault();
       const newTodo = {
         // we will already ids from the external site jsonplaceholder
-        // so uuid is only needed for the ones we make
-        id: uuid.v4(),
+        // so uuid not needed for the ones we make
+        // id: uuid.v4(),
         title: this.title,
         completed: false,
       };
       // Send up to the parent
       this.$emit("add-todo", newTodo);
+      // Clear form afer submission
       this.title = "";
     },
   },
