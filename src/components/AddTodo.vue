@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import uuid from "uuid";
 export default {
   name: "AddTodo",
   data() {
@@ -24,8 +25,9 @@ export default {
     addTodo(e) {
       e.preventDefault();
       const newTodo = {
-        // we will get the id from the external site jsonplaceholder so uuid not needed
-        // id: uuid.v4(),
+        // we will already ids from the external site jsonplaceholder
+        // so uuid is only needed for the ones we make
+        id: uuid.v4(),
         title: this.title,
         completed: false,
       };
