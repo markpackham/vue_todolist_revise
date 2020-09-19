@@ -4,7 +4,7 @@
       <input
         type="checkbox"
         v-on:change="markComplete"
-        :checked="todo.completed"
+        v-bind:checked="todo.completed"
       />
       {{ todo.title }}
       <button @click="$emit('del-todo', todo.id)" class="del">x</button>
